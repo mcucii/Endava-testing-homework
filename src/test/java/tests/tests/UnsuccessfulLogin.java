@@ -1,33 +1,39 @@
-package week.first;
+package tests.tests;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 
-public class LoginSuccessfulTest {
+public class UnsuccessfulLogin {
     WebDriver driver;
 
     @BeforeTest
-    public void setUp() {
+    private void setUp() {
         //System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
         driver = new ChromeDriver();
     }
 
     @AfterTest
     public void tearDown() {
+
         driver.quit();
     }
 
     @Test
-    public void testSuccessfulLogin() {
+    public void test() {
         String baseUrl = "https://www.saucedemo.com/";
-        String username = "error_user";
-        String password = "secret_sauce";
+        String username = "fake_user";
+        String password = "wrong_password";
 
         driver.get(baseUrl);
 
@@ -39,7 +45,7 @@ public class LoginSuccessfulTest {
         passwordField.sendKeys(password);
         loginButton.click();
 
-        WebElement welcomeMessage = driver.findElement(By.xpath("//*[@id=\"inventory_container\"]"));
-        Assert.assertTrue(welcomeMessage.isDisplayed(), "Login was successful");
+        WebElement errorMessage = driver.findElement(By.xpath("//div[contains(@class, 'error-message-container')]"));
+        Assert.assertTrue(errorMessage.isDisplayed(), "Failed to login");
     }
 }

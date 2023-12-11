@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>samsara_predavanje</groupId>
-    <artifactId>samsara_predavanje</artifactId>
+    <groupId>Homework</groupId>
+    <artifactId>Homework</artifactId>
     <version>1.0-SNAPSHOT</version>
 
 
@@ -51,7 +51,7 @@
     <build>
         <resources>
             <resource>
-                <directory>src/test/resources</directory>
+                <directory>resources</directory>
                 <filtering>true</filtering>
             </resource>
         </resources>
@@ -81,7 +81,8 @@
                 <version>${maven.failsafe.version}</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                        <suiteXmlFile>resources/suite_successful_login.xml</suiteXmlFile>
+                        <suiteXmlFile>resources/suite_unsuccessful_login.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
                 <executions>
