@@ -3,8 +3,6 @@
 
 <suite name="Homework 1">
 
-    <parameter name="browser" value="chrome"/>
-
     <test name="SuccessfulLogin">
         <classes>
             <class name="tests.tests.SuccessfulLogin"/>

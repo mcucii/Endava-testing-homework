@@ -44,6 +44,12 @@
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
 
 
     </dependencies>
@@ -83,6 +89,7 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>resources/suite_successful_login.xml</suiteXmlFile>
                         <suiteXmlFile>resources/suite_unsuccessful_login.xml</suiteXmlFile>
+                        <suiteXmlFile>resources/suite_selenium.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
                 <executions>
